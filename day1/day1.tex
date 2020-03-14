@@ -1,0 +1,166 @@
+\documentclass{article}[11pt]
+\usepackage[subtle]{savetrees}
+\usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
+
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{listings}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Alek Westover}
+\rhead{}
+\usepackage{hyperref}
+
+\DeclareMathOperator{\E}{\mathbb{E}}
+\DeclareMathOperator{\Var}{\text{Var}}
+\DeclareMathOperator{\img}{Img}
+\DeclareMathOperator{\polylog}{\text{polylog}}
+\DeclareMathOperator{\st}{\text{ such that }}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\interior}[1]{%
+  {\kern0pt#1}^{\mathrm{o}}%
+}
+\newcommand{\mb}{\mathbf}
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\y}{\mathbf{y}}
+\newcommand{\z}{\mathbf{z}}
+\renewcommand{\d}{\mathrm{d}} %straight d for integrals
+\newcommand{\De}{\Delta}
+\renewcommand{\Re}{\mathrm{Re}}
+\renewcommand{\Im}{\mathrm{Im}}
+\newcommand{\setof}[2]{\left\{ #1\; : \;#2 \right\}}
+\newcommand{\set}[1]{\left\{ #1\right\}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\contr}[0]{\[ \Rightarrow\!\Leftarrow \]}
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\eqdef}{=\vcentcolon}
+
+\newtheorem{fact}{Fact}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{theorem}{Theorem}
+\usepackage{mdframed}
+\newmdtheoremenv{q}{Question}
+
+\author{Alek Westover and Max Vigneras}
+\title{Corona Coding Club Day 1 intro}
+\begin{document}
+\maketitle
+
+Thoughts from the author: 
+The problems are sorted by difficulty within each section.
+Some of these problems are pretty hard.
+Work together! Ask Questions!
+
+Pre-Lesson Homework: do the first 2 pythonprogramming.net tutorials.
+Post-Lesson Homeowrk: do the next 2 tutorials. Do any of these problems that you thought were interesting.
+
+\section{Easy Stuff}
+Demo program: 
+\begin{lstlisting}
+  name = input()
+  print("Hello "+ name)
+\end{lstlisting}
+
+\begin{q}
+  Create a program that prints all even numbers up to your age.
+  -From "Python for kids"
+\end{q}
+
+\begin{q}
+  Create a program that asks someone for their name, adn then compliments them.
+\end{q}
+
+\begin{q}
+  Create a number guessing game. ("Im thinking of a number in [1,100]" User says "high and low", computer guesses numbers)
+\end{q}
+
+
+\section{Number Theory Stuff}
+Demo program: check if a number is a perfect square:
+\begin{lstlisting}
+  def checkIsSquare(n):
+    i = 1
+    while i*i <= n:
+      if n == i*i:
+        return True
+      i+=1
+    return False
+\end{lstlisting}
+
+
+\begin{q}
+  Write a program to compute the $n$-th fibonacci number.
+  Recall $f_0=f_1=1$, $f_n=f_{n-1}+ f_{n-2}$.
+
+  Bonus: use linear algebra to do it in time $O(\log n)$
+\end{q}
+
+\begin{q}
+  Write a program that makes an array with $x[i]$ indicating whether $i$ is prime or not.
+\end{q}
+
+\begin{q}
+  Write a function that checks if a number is prime.
+\end{q}
+
+\begin{q}
+  Write a program to compute the greatest common divisor of 
+  two numbers.
+
+  Hint: you can bash it, or do the euclidean algorithm
+\end{q}
+
+
+% \section{Sorting Stuff}
+
+% \begin{q}
+%   Implement quicksort.
+
+%   Bonus: look up the smoothed striding algorithm http://parallelpartition.surge.sh/.
+
+% \end{q}
+
+\section{Encryption Stuff}
+Demo: reverse cipher
+\begin{lstlisting}
+"".join([chr(26-(ord(x)%26)+ord('a')) for x in input_string])
+\end{lstlisting}
+
+\begin{q}
+  Make a program that does a caesar cipher. That is, it takes in some english text, and cyclically shifts all the letters by some key, for example 1.
+\end{q}
+
+% \begin{q}
+%   RSA
+% \end{q}
+
+\section{Signal Stuff}
+Demo program: makes a graph of some noise.  
+\begin{lstlisting}
+  import matplotlib.pyplot as plt
+  import numpy as np
+  data = np.random.rand(100)
+  plt.plot(data)
+  plt.show()
+\end{lstlisting}
+
+\begin{q}
+  Print a thousand random numbers.
+\end{q}
+
+\begin{q}
+  Generate a random signal with 1000 data points. Plot it. Make a smoothed version of the signal.
+
+  Hint: use moving average
+\end{q}
+
+\end{document}
