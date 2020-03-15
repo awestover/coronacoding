@@ -159,6 +159,6 @@ plt.plot(data, c='r')
 plt.plot(smoothedData)
 plt.show()
 ```
-[noise](noise.png)
-[smooth](smooth.png)
+![noise](noise.png)
+![smooth](smooth.png)
 
