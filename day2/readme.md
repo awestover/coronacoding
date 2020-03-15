@@ -16,6 +16,9 @@ double_loop_loop(4)
 > Make a function that can count how many the word "like" occurs in a sentece you input, and also in the following sentence (case insensitive, i.e. capitalized counts):
 > "Like it's really easy, like dude what're you like doing like what is this question, like this seems dumb like; oh man liken this tutorial unto yourselves like get scammed like wow like like like like ziyong is a pro yah like know?"
 
+## Problem 1.5
+> Make a function that can print out every other word in a string that you input, and also in the sentence from the previous problem.
+
 ## Problem 2
 > Make a function that finds the element whose square is biggest in a list (break ties by which one occurs first in the list). e.g. `biggestSquare([0,0,0,0]) = 0; biggestSquare([0,1,0,0]) = 1, biggestSquare([0,1,-2,0]) = -2, biggestSquare([1,2,3,4,-4]) = 4`
 
