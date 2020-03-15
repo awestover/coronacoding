@@ -93,6 +93,13 @@ print("Your zodiac animal is" + zodiac_animals[age%12])
 > Hint: "Exponentiation by squaring"
 > You could also probably find a pattern, stuff repeats in modular arithmetic
 
+## Problem -0.5 *(COOL)*
 
+>A magic square is an arrangement of distinct numbers (i.e., each number is used once), usually integers, in a square grid, where the numbers in each row, and in each column, and the numbers in the main and secondary diagonals, all add up to the same number, called the "magic constant." A magic square has the same number of rows as it has columns, and in conventional math notation, "n" stands for the number of rows (and columns) it has. Thus, a magic square always contains $n^{2}$ numbers, and its size (the number of rows [and columns] it has) is described as being "of order n".
+
+>First, write a program to check whether an n x n matrix is a magic square. 
+>Test it on this square: [[7, 12, 1, 14], [2, 13, 8, 11], [16, 3, 10, 5], [9, 6, 15, 4]] 
+
+>Next, write a program to create your own magic square. Then check that it is indeed a magic square using the program you wrote above.
 
 
