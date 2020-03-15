@@ -85,7 +85,7 @@ print("Your zodiac animal is" + zodiac_animals[age%12])
 > Write a program that computes the last 5 digits of $2^{123412341234134}$
 
 > Note: if you try to make python compute $2^{123412341234134}$ it will blow up, this is a ridiculously big number
-> Instead of doing that, use the following mathematical fact (that you should verify!)  `(a * b)\% m = (a\%m * b\%m)\% m`
+> Instead of doing that, use the following mathematical fact (that you should verify!)  `(a * b)% m = (a%m * b%m)% m`
 > Also note, that the number is big, so even a for loop will take a while!
 > Hint: "Exponentiation by squaring"
 > You could also probably find a pattern, stuff repeats in modular arithmetic
