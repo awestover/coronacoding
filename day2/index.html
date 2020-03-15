@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>readme</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="corona-coding-club-day-2">Corona Coding Club Day 2</h1>
+<h2 id="alek-and-max">Alek and Max</h2>
+<h1 id="ez-warmup-problems">EZ warmup problems</h1>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> double_loop_loop(n):</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span><span class="op">*</span>n):</span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(i<span class="op">+</span><span class="dv">1</span>, <span class="dv">2</span><span class="op">*</span>n):</span>
+<span id="cb1-4"><a href="#cb1-4"></a>      <span class="bu">print</span>(i, j)</span>
+<span id="cb1-5"><a href="#cb1-5"></a>double_loop_loop(<span class="dv">4</span>)</span></code></pre></div>
+<h2 id="problem-1">Problem 1</h2>
+<blockquote>
+<p>Make a function that can count how many the word “like” occurs in a sentece you input, and also in the following sentence (case insensitive, i.e. capitalized counts): “Like it’s really easy, like dude what’re you like doing like what is this question, like this seems dumb like; oh man liken this tutorial unto yourselves like get scammed like wow like like like like ziyong is a pro yah like know?”</p>
+</blockquote>
+<h2 id="problem-2">Problem 2</h2>
+<blockquote>
+<p>Make a function that finds the element whose square is biggest in a list (break ties by which one occurs first in the list). e.g. <code>biggestSquare([0,0,0,0]) = 0; biggestSquare([0,1,0,0]) = 1, biggestSquare([0,1,-2,0]) = -2, biggestSquare([1,2,3,4,-4]) = 4</code></p>
+</blockquote>
+<h2 id="problem-3">Problem 3</h2>
+<blockquote>
+<p>Make a function that gives a random coronavirus related tip (from a list of coronavirus related tips)</p>
+</blockquote>
+<h1 id="number-theory">Number Theory</h1>
+<h2 id="problem--1">Problem -1</h2>
+<blockquote>
+<p>Write a program that outputs for each <span class="math inline">\(i, j \in \{1,2,\ldots, n\}\)</span> computes whether <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> are relatively prime (whether they have any common factors) and stores it in a 2d matrix.</p>
+</blockquote>
+<p><strong>Definition:</strong> Modular arithmetic. Consider a clock. The time is some number in <span class="math inline">\([0,12]\)</span> as represented by clock hands. If you are at time <span class="math inline">\(x\)</span>, and you wait for <span class="math inline">\(5\)</span> hours, you are either at time <span class="math inline">\(x+5\)</span>, or time <span class="math inline">\(x+5-12\)</span>, because in “clock arithmetic” the numbers wrap once you pass <span class="math inline">\(12\)</span>. For example, in clock arithmetic <span class="math inline">\(7+7 = 2\)</span> (7 hours after 7pm it is 2am).</p>
+<p>The <code>mod</code> opperator is very useful for a lot of reasons, which you will soon see. It is defined as <span class="math inline">\(x \% m = x - km\)</span> where <span class="math inline">\(k\)</span> is an integer chosen so that <span class="math inline">\(x-km \in [0,m)\)</span>. Basically, you just subtract the mod off of the number until you lie in the right range, exactly like with the clock.</p>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>zodiac_animals <span class="op">=</span> [<span class="st">&quot;Rat&quot;</span>, <span class="st">&quot;Ox&quot;</span>, <span class="st">&quot;Tiger&quot;</span>, <span class="st">&quot;Rabbit&quot;</span>, <span class="st">&quot;Dragon&quot;</span>, <span class="st">&quot;Snake&quot;</span>, <span class="st">&quot;Horse&quot;</span>, <span class="st">&quot;Goat&quot;</span>, <span class="st">&quot;Monkey&quot;</span>, <span class="st">&quot;Rooster&quot;</span>, <span class="st">&quot;Dog&quot;</span>, <span class="st">&quot;Pig&quot;</span>]</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="bu">print</span>(<span class="st">&quot;hey, want to know your zodiac animal! I can tell you.&quot;</span>)</span>
+<span id="cb2-3"><a href="#cb2-3"></a>age <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;How old are you?&quot;</span>))</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="bu">print</span>(<span class="st">&quot;Your zodiac animal is&quot;</span> <span class="op">+</span> zodiac_animals[age<span class="op">%</span><span class="dv">12</span>])</span></code></pre></div>
+<h2 id="problem-0.5-very-cool">Problem 0.5 <em>(VERY COOL)</em></h2>
+<blockquote>
+<p>Approximate <span class="math inline">\(\pi\)</span> with the following method: Draw a bunch of points uniformly at random from the unit square (using <code>np.random.rand</code>) Calculate what fraction are in the unit circle too (satisfy <span class="math inline">\(x^2 + y^2 \le 1\)</span>). This fraction approahces <span class="math inline">\(\pi/4\)</span> if you take more and more points.</p>
+</blockquote>
+<h2 id="problem-0-very-cool">Problem 0 <em>(VERY COOL)</em></h2>
+<blockquote>
+<p>There is a game called “FLIP FLOP”. <span class="math inline">\(n\)</span> people sit in a circle. They take turns saying numbers in ascending order. Max says “1”, Alek says “2”, Justin says 3, Madeline says 4, David says 5, Ziyong says 6, and then Leon is like “FLIP!!!” (on any multiple of <span class="math inline">\(7\)</span> the person says FLIP instead of saying the number. When they say FLIP the direction around the circle changes) Then Ziyong says “FLOP!!!!” (on any multiple of <span class="math inline">\(8\)</span> the person says FLOP instead of saying the number. When they say FLOP a person is skipped in the current direction) Then David is sad because he was skipped. Madeline says 9 Justin says 10 Alek says 11 Max says 12 Melina says 13 Ethan says FLIP Melina says 15 Max says FLOP Alek feels left out Justin says 17 etc</p>
+</blockquote>
+<blockquote>
+<p>Now here is the question, lets say there are 100 people in the circle. Bob is 50 seats clockwise of Max Does he ever get a chance to play? SIMULATE IT! once you are done, you can check against my simulation: <a href="http://flipflop.surge.sh/">aleks flipflop</a></p>
+</blockquote>
+<h2 id="problem-1-very-cool">Problem 1 <em>(VERY COOL)</em></h2>
+<blockquote>
+<p>Write a program that computes the last 5 digits of <span class="math inline">\(2^{123412341234134}\)</span></p>
+</blockquote>
+<blockquote>
+<p>Note: if you try to make python compute <span class="math inline">\(2^{123412341234134}\)</span> it will blow up, this is a ridiculously big number Instead of doing that, use the following mathematical fact (that you should verify!) <code>(a * b)\% m = (a\%m * b\%m)\% m</code> Also note, that the number is big, so even a for loop will take a while! Hint: “Exponentiation by squaring” You could also probably find a pattern, stuff repeats in modular arithmetic</p>
+</blockquote>
+</body>
+</html>
