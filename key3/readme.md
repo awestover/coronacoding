@@ -9,8 +9,11 @@ def gcd(n,m):
     return m
   return gcd(n%m, m)
 
+def lcm(n,m):
+  return (n*m) // gcd(n,m)
+
 n=100
-data = [[gcd(i,j) for i in range(1,n)] for j in range(1,n)]
+data = [[lcm(i,j) for i in range(1,n)] for j in range(1,n)]
 plt.imshow(data)
 plt.show()
 
@@ -21,5 +24,6 @@ plt.show()
 
 ```
 ![gcd](gcd.png)
+![lcm](lcm.png)
 
 
