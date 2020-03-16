@@ -1,4 +1,7 @@
-# Corona Coding Club Day 1 KEY
+--- 
+title: Corona Coding Club Day 1 KEY
+author: Alek
+---
 
 ## Problem 1
 ```python

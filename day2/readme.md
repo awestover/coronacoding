@@ -1,7 +1,9 @@
-# Corona Coding Club Day 2 
-## Alek and Max
+---
+title: Corona Coding Club Day2
+author: Alek Westover, and Max Vigneras
+---
 
-# EZ warmup problems
+# Easy warmup problems
 
 **Example:**
 ```python

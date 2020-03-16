@@ -1,4 +1,7 @@
-# Corona Coding Club Day 3 Data Science
+---
+title: Corona Coding Club Day 3 Data Science Intro 
+author: Alek and Max
+---
 
 # Pre-probelm lesson:
 

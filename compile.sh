@@ -1,1 +1,1 @@
-pandoc -s --mathjax readme.md -o test.html
+pandoc -s -css style.css --mathjax readme.md -o index.html
