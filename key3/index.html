@@ -78,6 +78,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../daystyle.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -87,28 +88,66 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 class="title">Key 3</h1>
 <p class="author">Alek and Max</p>
 </header>
-<h1 id="problem-6">Problem 6</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<h1 id="problem-1">Problem 1</h1>
+<p>Plot a sine wave. Plot another sine wave. Add them together!</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="kw">def</span> gcd(n,m):</span>
-<span id="cb1-5"><a href="#cb1-5"></a>  n,m <span class="op">=</span> <span class="bu">max</span>(m,n), <span class="bu">min</span>(m,n)</span>
-<span id="cb1-6"><a href="#cb1-6"></a>  <span class="cf">if</span> n <span class="op">%</span> m <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb1-7"><a href="#cb1-7"></a>    <span class="cf">return</span> m</span>
-<span id="cb1-8"><a href="#cb1-8"></a>  <span class="cf">return</span> gcd(n<span class="op">%</span>m, m)</span>
-<span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="kw">def</span> lcm(n,m):</span>
-<span id="cb1-11"><a href="#cb1-11"></a>  <span class="cf">return</span> (n<span class="op">*</span>m) <span class="op">//</span> gcd(n,m)</span>
-<span id="cb1-12"><a href="#cb1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13"></a>n<span class="op">=</span><span class="dv">100</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a>data <span class="op">=</span> [[lcm(i,j) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,n)] <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,n)]</span>
-<span id="cb1-15"><a href="#cb1-15"></a>plt.imshow(data)</span>
-<span id="cb1-16"><a href="#cb1-16"></a>plt.show()</span>
-<span id="cb1-17"><a href="#cb1-17"></a></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># nicer plot with seaborn</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-20"><a href="#cb1-20"></a>sns.heatmap(data, cbar<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb1-21"><a href="#cb1-21"></a>plt.show()</span></code></pre></div>
+<span id="cb1-4"><a href="#cb1-4"></a>wave1 <span class="op">=</span> np.sin(np.linspace(<span class="dv">1</span>,np.pi<span class="op">*</span><span class="dv">2</span><span class="op">*</span><span class="dv">2</span>, <span class="dv">1000</span>))</span>
+<span id="cb1-5"><a href="#cb1-5"></a>wave2 <span class="op">=</span> np.sin(np.linspace(<span class="dv">1</span>,np.pi<span class="op">*</span><span class="dv">2</span><span class="op">*</span><span class="dv">4</span>, <span class="dv">1000</span>))</span>
+<span id="cb1-6"><a href="#cb1-6"></a>plt.plot(wave1)</span>
+<span id="cb1-7"><a href="#cb1-7"></a>plt.show()</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a>plt.plot(wave1<span class="op">+</span>wave2)</span>
+<span id="cb1-10"><a href="#cb1-10"></a>plt.show()</span></code></pre></div>
+<h1 id="problem-1.75">Problem 1.75</h1>
+<p>Write some text to a file called <code>data.txt</code>. Specifically write out this text:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>data <span class="op">=</span> <span class="st">&quot;The cup game is a classic problem in computer science that models work scheduling. In the cup game on n cups, a filler and an emptier take turns adding and removing water from cups (i.e. new tasks come in and the scheduler must allocate processors to handle the incoming work). On each round the filler will distribute some new amount of water among the cups, and the emptier will remove some amount of water from some of the cups. The filler can distribute the water however it wants (as long as it places at most 1 water in each cup), but the emptier has an added discretization constraint: it can only remove water from some fixed number of cups. The problem is to analyze how well each player can do, that is, how much water can the filler force to be in the fullest cup, and what is the upper bound on this fill that an appropriate emptying strategy can guarantee? We study several variants of the problem and answer some open questions.&quot;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;data.txt&quot;</span>, <span class="st">&quot;w&quot;</span>) <span class="im">as</span> f:</span>
+<span id="cb2-4"><a href="#cb2-4"></a>  f.write(data)</span></code></pre></div>
+<h1 id="problem-1.5">Problem 1.5</h1>
+<p>Read in that file called <code>data.txt</code> and print it out</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;data.txt&quot;</span>, <span class="st">&quot;r&quot;</span>) <span class="im">as</span> f:</span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="bu">print</span>(f.read())</span></code></pre></div>
+<h1 id="problem-2">Problem 2</h1>
+<p>Make a histogram of how many times each character occurs in that file</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a>data <span class="op">=</span> <span class="st">&quot;blah bah blah&quot;</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>plt.hist(<span class="bu">list</span>(data), bins<span class="op">=</span><span class="dv">26</span>)</span>
+<span id="cb4-5"><a href="#cb4-5"></a>plt.show()</span></code></pre></div>
+<h1 id="problem-3">Problem 3</h1>
+<p>Generate some data of “happiness versus sleep”. It should be slightly random noise added to some distribution (e.g. <code>happiness = 1000-(sleep-7)**2 + np.random.random()</code>).</p>
+<h1 id="problem-4">Problem 4</h1>
+<p>Write that data out to a <code>csv</code> <code>happydata.csv</code> Hint: use <code>import pandas</code>, or <code>import json</code></p>
+<h1 id="problem-5">Problem 5</h1>
+<p>Read the data in from <code>happydata.csv</code>, and make a parabola of best fit (or whatever is appropriate based on your model). Hint: use <code>numpy</code></p>
+<h1 id="problem-6">Problem 6</h1>
+<p>Make a heat map of <code>gcd(i,j)</code> <span class="math display">\[i,j\in\{1,2,\ldots, n\}\]</span></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="kw">def</span> gcd(n,m):</span>
+<span id="cb5-5"><a href="#cb5-5"></a>  n,m <span class="op">=</span> <span class="bu">max</span>(m,n), <span class="bu">min</span>(m,n)</span>
+<span id="cb5-6"><a href="#cb5-6"></a>  <span class="cf">if</span> n <span class="op">%</span> m <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb5-7"><a href="#cb5-7"></a>    <span class="cf">return</span> m</span>
+<span id="cb5-8"><a href="#cb5-8"></a>  <span class="cf">return</span> gcd(n<span class="op">%</span>m, m)</span>
+<span id="cb5-9"><a href="#cb5-9"></a></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="kw">def</span> lcm(n,m):</span>
+<span id="cb5-11"><a href="#cb5-11"></a>  <span class="cf">return</span> (n<span class="op">*</span>m) <span class="op">//</span> gcd(n,m)</span>
+<span id="cb5-12"><a href="#cb5-12"></a></span>
+<span id="cb5-13"><a href="#cb5-13"></a>n<span class="op">=</span><span class="dv">100</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a>data <span class="op">=</span> [[lcm(i,j) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,n)] <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,n)]</span>
+<span id="cb5-15"><a href="#cb5-15"></a>plt.imshow(data)</span>
+<span id="cb5-16"><a href="#cb5-16"></a>plt.show()</span>
+<span id="cb5-17"><a href="#cb5-17"></a></span>
+<span id="cb5-18"><a href="#cb5-18"></a><span class="co"># nicer plot with seaborn</span></span>
+<span id="cb5-19"><a href="#cb5-19"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb5-20"><a href="#cb5-20"></a>sns.heatmap(data, cbar<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-21"><a href="#cb5-21"></a>plt.show()</span></code></pre></div>
 <p><img src="gcd.png" alt="gcd" /> <img src="lcm.png" alt="lcm" /></p>
+<h1 id="problem-7">Problem 7</h1>
+<p>Make a graph of the primes.</p>
 </body>
 </html>
