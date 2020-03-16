@@ -1,3 +1,8 @@
+---
+title: Key 3
+author: Alek and Max
+---
+
 # Problem 6
 ```python
 import matplotlib.pyplot as plt
