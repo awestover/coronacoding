@@ -1,12 +1,80 @@
 # Corona Coding Club Day 3 Data Science
 
+# Pre-probelm lesson:
+
+### IO
 First, import the following really important libraries:
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 ```
 
-If you get import errors when you try importing them, install pip: [https://pythonprogramming.net/using-pip-install-for-python-modules/] and type `pip install matplotlib` and `pip install numpy` into your terminal
+If you get import errors when you try importing them, install pip:
+(https://pythonprogramming.net/using-pip-install-for-python-modules/) and type
+`pip install matplotlib` and `pip install numpy` into your terminal
+
+Today we are going to be learning how to do input/output with data, and how to visualize data.
+
+For basic input/output (IO) you can use the `with` function in `python`:
+```python
+with open("data.txt", "r") as f:
+  for line in f:
+    print(line)
+```
+
+The `r` parameter in the `open` function is **VERY** important. It can have a couple different values
+
+  - `r`: read mode
+  - `w`: write mode
+  - `wa`: append write mode
+  - `r+`: read and write mode
+
+One really important thing to know is that opening a file with `w` will
+*overwrite its contents*. You won't be able to get them back! So don't do that.
+`w` mode is for creating new files with a program.
+
+For reading in special file types like `csv`s, `xml`s, `json`s, `xlsx`s, which have computer readable data, you will want to use a different function to read the file.
+`pandas` is great for IO with tables. For example,
+```python
+import pandas as pd
+pd.read_csv("data.csv")
+
+df = pd.DataFrame({"alek tennis score": [1,2,3,4], "max tennis score":[5,56,7,7]})
+df.to_csv("tennis.csv")
+```
+
+`json` is great for `json` files:
+```python
+import json
+
+with open("data.json", "r") as f:
+  json.load(f)
+
+
+with open("data.json", "w") as f:
+  json.dump(data, f)
+```
+
+`BeautifulSoup` is super helpful for parsing `html` and `xml`.
+
+## plotting data
+Plotting data is a really good thing to be able to do too. `matplotlib` is the basic plotting library, `seaborn` is a nice wrapper around `matplotlib`.
+
+Here are some examples of plots:
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+plt.plot(np.sin(np.linspace(0,10,1000)))
+plt.show()
+
+# flip some coins, wow binomial distribution!
+coins = [sum([np.random.randint(2) for j in range(100)]) for i in range(1000)]
+plt.hist(coins)
+plt.show()
+
+```
+
 
 # Problem 1
 Plot a sine wave. Plot another sine wave. Add them together!
@@ -35,4 +103,10 @@ Hint: use `import pandas`, or `import json`
 # Problem 5
 Read the data in from `happydata.csv`, and make a parabola of best fit (or whatever is appropriate based on your model). 
 Hint: use `numpy`
+
+# Problem 6
+Make a heat map of `gcd(i,j)` $$i,j\in\{1,2,\ldots, n\}$$
+
+# Problem 7
+Make a graph of the primes.
 
