@@ -1,6 +1,6 @@
 # Problem 6
 ```python
-import matplotilb.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
 
 def gcd(n,m):
@@ -16,7 +16,7 @@ plt.show()
 
 # nicer plot with seaborn
 import seaborn as sns
-sns.heatmap(data)
+sns.heatmap(data, cbar=False)
 plt.show()
 
 ```
