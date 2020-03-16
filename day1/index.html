@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Alek Westover" />
+  <title>day 1</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../daystyle.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">day 1</h1>
+<p class="author">Alek Westover</p>
+</header>
+<p>Thoughts from the author: The problems are sorted by difficulty within each section. Some of these problems are pretty hard. Work together! Ask Questions!</p>
+<p>Pre-Lesson Homework: do the first 2 pythonprogramming.net tutorials. Post-Lesson Homeowrk: do the next 2 tutorials. Do any of these problems that you thought were interesting.</p>
+<p>pdf version of this tutorial: <a href="day1.pdf">day1.pdf</a></p>
+<p>#Easy Stuff Demo program:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>  name <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="bu">print</span>(<span class="st">&quot;Hello &quot;</span><span class="op">+</span> name)</span></code></pre></div>
+<h1 id="problem-1">Problem 1</h1>
+<p>Create a program that prints all even numbers up to your age. -From “Python for kids”</p>
+<h1 id="problem-2">Problem 2</h1>
+<p>Create a program that asks someone for their name, adn then compliments them.</p>
+<h1 id="problem-3">Problem 3</h1>
+<p>Create a number guessing game. (“Im thinking of a number in [1,100]” User says “high and low”, computer guesses numbers)</p>
+<h1 id="number-theory-stuff">Number Theory Stuff</h1>
+<p>Demo program: check if a number is a perfect square:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>  <span class="kw">def</span> checkIsSquare(n):</span>
+<span id="cb2-2"><a href="#cb2-2"></a>    i <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>    <span class="cf">while</span> i<span class="op">*</span>i <span class="op">&lt;=</span> n:</span>
+<span id="cb2-4"><a href="#cb2-4"></a>      <span class="cf">if</span> n <span class="op">==</span> i<span class="op">*</span>i:</span>
+<span id="cb2-5"><a href="#cb2-5"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>      i<span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>    <span class="cf">return</span> <span class="va">False</span></span></code></pre></div>
+<h1 id="problem-4">Problem 4</h1>
+<p>Write a program to compute the <span class="math inline">\(n\)</span>-th fibonacci number. Recall <span class="math inline">\(f_0=f_1=1\)</span>, <span class="math inline">\(f_n=f_{n-1}+ f_{n-2}\)</span>.</p>
+<p>Bonus: use linear algebra to do it in time <span class="math inline">\(O(\log n)\)</span></p>
+<h1 id="problem-5">Problem 5</h1>
+<p>Write a program that makes an array with <span class="math inline">\(x[i]\)</span> indicating whether <span class="math inline">\(i\)</span> is prime or not.</p>
+<h1 id="problem-6">Problem 6</h1>
+<p>Write a function that checks if a number is prime.</p>
+<h1 id="problem-7">Problem 7</h1>
+<p>Write a program to compute the greatest common divisor of two numbers.</p>
+<p>Hint: you can bash it, or do the euclidean algorithm</p>
+<h1 id="encryption-stuff">Encryption Stuff</h1>
+<p>Demo: reverse cipher</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">&quot;&quot;</span>.join([<span class="bu">chr</span>(<span class="dv">26</span><span class="op">-</span>(<span class="bu">ord</span>(x)<span class="op">%</span><span class="dv">26</span>)<span class="op">+</span><span class="bu">ord</span>(<span class="st">&#39;a&#39;</span>)) <span class="cf">for</span> x <span class="kw">in</span> input_string])</span></code></pre></div>
+<h1 id="problem-8">Problem 8</h1>
+<p>Make a program that does a caesar cipher. That is, it takes in some english text, and cyclically shifts all the letters by some key, for example 1.</p>
+<h1 id="signal-stuff">Signal Stuff</h1>
+<p>Demo program: makes a graph of some noise.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>  <span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-3"><a href="#cb4-3"></a>  data <span class="op">=</span> np.random.rand(<span class="dv">100</span>)</span>
+<span id="cb4-4"><a href="#cb4-4"></a>  plt.plot(data)</span>
+<span id="cb4-5"><a href="#cb4-5"></a>  plt.show()</span></code></pre></div>
+<h1 id="problem-9">Problem 9</h1>
+<p>Print a thousand random numbers.</p>
+<h1 id="problem-10">Problem 10</h1>
+<p>Generate a random signal with 1000 data points. Plot it. Make a smoothed version of the signal.</p>
+<p>Hint: use moving average</p>
+</body>
+</html>
