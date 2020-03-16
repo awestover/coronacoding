@@ -20,6 +20,6 @@ sns.heatmap(data)
 plt.show()
 
 ```
-![gcd.png](gcd.png)
+![gcd](gcd.png)
 
 
