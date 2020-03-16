@@ -10,6 +10,7 @@ Potential topics for future classes
 - have a lecture on RSA
 - have a lecture on sorting
 - have another lecture on sorting
+- have another lecture on sorting
 - have a lecture on parallel algorithms
 - have a lecture on dynamic programming
 - have a lecture on running time analysis
@@ -20,4 +21,12 @@ Potential topics for future classes
 - pyautogui
 - webdev with flask
 - webscrapping
+- bit arithmetic
+- pointers?
+- linked lists
+- more graph theory, adjacency matrices
+- root finder 
+- simulated anealing
+
+![panda](panda.jpg)
 
