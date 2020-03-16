@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="Max (and one by Alek)" />
+  <meta name="author" content="Max, Alek, and Ziyong!!" />
   <title>Corona Club Day 2 Key</title>
   <style>
       code{white-space: pre-wrap;}
@@ -85,7 +85,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <body>
 <header id="title-block-header">
 <h1 class="title">Corona Club Day 2 Key</h1>
-<p class="author">Max (and one by Alek)</p>
+<p class="author">Max, Alek, and Ziyong!!</p>
 </header>
 <h2 id="ez-warmup-problems">EZ warmup problems</h2>
 <h2 id="problem-1">PROBLEM 1</h2>
@@ -148,6 +148,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-9"><a href="#cb6-9"></a></span>
 <span id="cb6-10"><a href="#cb6-10"></a>estimate_pi(<span class="dv">100000</span>)</span></code></pre></div>
 <h2 id="problem-0">PROBLEM 0</h2>
+<p><strong>Ziyong’s solution:</strong></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">def</span> flipFlop(n, numberOfPeople): <span class="co">#n is the person who we check to play</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a>    number <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a>    person <span class="op">=</span> <span class="dv">1</span></span>
@@ -189,99 +190,122 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-39"><a href="#cb7-39"></a>                person <span class="op">=</span> (person <span class="op">+</span> direction <span class="op">*</span> <span class="dv">1</span>)<span class="op">%</span>numberOfPeople</span>
 <span id="cb7-40"><a href="#cb7-40"></a>            number <span class="op">+=</span> <span class="dv">1</span></span>
 <span id="cb7-41"><a href="#cb7-41"></a>flipFlop(<span class="dv">50</span>, <span class="dv">100</span>)</span></code></pre></div>
+<p><strong>Alek’s solution</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>direction <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>person <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>number_of_ppl <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>data <span class="op">=</span> []</span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">5600</span><span class="op">*</span><span class="dv">2</span>):</span>
+<span id="cb8-6"><a href="#cb8-6"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">7</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb8-7"><a href="#cb8-7"></a>        direction <span class="op">*=</span> <span class="dv">-1</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">8</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb8-9"><a href="#cb8-9"></a>        person <span class="op">+=</span> direction</span>
+<span id="cb8-10"><a href="#cb8-10"></a>    person <span class="op">+=</span> direction</span>
+<span id="cb8-11"><a href="#cb8-11"></a>    person <span class="op">=</span> person <span class="op">%</span> number_of_ppl</span>
+<span id="cb8-12"><a href="#cb8-12"></a>    data.append(person)</span>
+<span id="cb8-13"><a href="#cb8-13"></a></span>
+<span id="cb8-14"><a href="#cb8-14"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-15"><a href="#cb8-15"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-16"><a href="#cb8-16"></a></span>
+<span id="cb8-17"><a href="#cb8-17"></a>points <span class="op">=</span> [(np.cos(data[i]<span class="op">*</span>np.pi<span class="op">*</span><span class="dv">2</span><span class="op">/</span><span class="dv">100</span>)<span class="op">*</span>(i<span class="op">**</span><span class="fl">0.5</span>), np.sin(data[i]<span class="op">*</span>np.pi<span class="op">*</span><span class="dv">2</span><span class="op">/</span><span class="dv">100</span>)<span class="op">*</span>(i<span class="op">**</span><span class="fl">0.5</span>)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(data))]</span>
+<span id="cb8-18"><a href="#cb8-18"></a>plt.scatter([x[<span class="dv">0</span>] <span class="cf">for</span> x <span class="kw">in</span> points], [x[<span class="dv">1</span>] <span class="cf">for</span> x <span class="kw">in</span> points])</span>
+<span id="cb8-19"><a href="#cb8-19"></a>plt.show()</span></code></pre></div>
+<figure>
+<img src="flipflop.png" alt="" /><figcaption>flipflop</figcaption>
+</figure>
 <h2 id="problem-1-1">PROBLEM 1</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">def</span> exp_by_squaring(x, n): <span class="co">#x^n</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>    val <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a>    <span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb8-4"><a href="#cb8-4"></a>        <span class="cf">if</span> n<span class="op">%</span><span class="dv">2</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
-<span id="cb8-5"><a href="#cb8-5"></a>            val <span class="op">=</span> (val<span class="op">*</span>x)</span>
-<span id="cb8-6"><a href="#cb8-6"></a>        x <span class="op">=</span> x<span class="op">*</span>x<span class="op">%</span><span class="dv">100000</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a>        n <span class="op">=</span> <span class="bu">int</span>(n<span class="op">/</span><span class="dv">2</span>)</span>
-<span id="cb8-8"><a href="#cb8-8"></a>    <span class="cf">return</span> val<span class="op">%</span><span class="dv">100000</span></span>
-<span id="cb8-9"><a href="#cb8-9"></a><span class="bu">print</span>(exp_by_squaring(<span class="dv">2</span>, <span class="dv">123412341234134</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">def</span> exp_by_squaring(x, n): <span class="co">#x^n</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>    val <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>    <span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb9-4"><a href="#cb9-4"></a>        <span class="cf">if</span> n<span class="op">%</span><span class="dv">2</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb9-5"><a href="#cb9-5"></a>            val <span class="op">=</span> (val<span class="op">*</span>x)</span>
+<span id="cb9-6"><a href="#cb9-6"></a>        x <span class="op">=</span> x<span class="op">*</span>x<span class="op">%</span><span class="dv">100000</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a>        n <span class="op">=</span> <span class="bu">int</span>(n<span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb9-8"><a href="#cb9-8"></a>    <span class="cf">return</span> val<span class="op">%</span><span class="dv">100000</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="bu">print</span>(exp_by_squaring(<span class="dv">2</span>, <span class="dv">123412341234134</span>))</span></code></pre></div>
 <p><strong>Alek’s solutions</strong></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>n <span class="op">=</span> <span class="dv">123412341234134</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>mod <span class="op">=</span> <span class="dv">10</span><span class="op">**</span><span class="dv">5</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a></span>
-<span id="cb9-4"><a href="#cb9-4"></a><span class="co"># ok, here is the &quot;basic&quot; recursive solution:</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a></span>
-<span id="cb9-6"><a href="#cb9-6"></a><span class="kw">def</span> powmod2(n, mod):</span>
-<span id="cb9-7"><a href="#cb9-7"></a>    <span class="cf">if</span> n<span class="op">==</span><span class="dv">1</span>:</span>
-<span id="cb9-8"><a href="#cb9-8"></a>        <span class="cf">return</span> <span class="dv">2</span></span>
-<span id="cb9-9"><a href="#cb9-9"></a>    tmp <span class="op">=</span> powmod2(n<span class="op">//</span><span class="dv">2</span>, mod)</span>
-<span id="cb9-10"><a href="#cb9-10"></a>    <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb9-11"><a href="#cb9-11"></a>        <span class="cf">return</span> (tmp<span class="op">*</span>tmp)<span class="op">%</span>mod</span>
-<span id="cb9-12"><a href="#cb9-12"></a>    <span class="cf">else</span>:</span>
-<span id="cb9-13"><a href="#cb9-13"></a>        <span class="cf">return</span> (((tmp<span class="op">*</span>tmp)<span class="op">%</span>mod)<span class="op">*</span><span class="dv">2</span>)<span class="op">%</span>mod </span>
-<span id="cb9-14"><a href="#cb9-14"></a></span>
-<span id="cb9-15"><a href="#cb9-15"></a><span class="bu">print</span>(powmod2(n,mod))</span>
-<span id="cb9-16"><a href="#cb9-16"></a></span>
-<span id="cb9-17"><a href="#cb9-17"></a><span class="co"># here is the troll solution</span></span>
-<span id="cb9-18"><a href="#cb9-18"></a><span class="bu">print</span>(<span class="bu">pow</span>(<span class="dv">2</span>, n, mod))</span>
-<span id="cb9-19"><a href="#cb9-19"></a><span class="co"># yeah thats right, its a built in function!</span></span>
-<span id="cb9-20"><a href="#cb9-20"></a></span>
-<span id="cb9-21"><a href="#cb9-21"></a><span class="co"># here is a solution that is too cool for school. </span></span>
-<span id="cb9-22"><a href="#cb9-22"></a><span class="co"># so freaking pro</span></span>
-<span id="cb9-23"><a href="#cb9-23"></a></span>
-<span id="cb9-24"><a href="#cb9-24"></a><span class="kw">def</span> v2(n):</span>
-<span id="cb9-25"><a href="#cb9-25"></a>    ct <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb9-26"><a href="#cb9-26"></a>    <span class="cf">while</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb9-27"><a href="#cb9-27"></a>        n<span class="op">//=</span> <span class="dv">2</span></span>
-<span id="cb9-28"><a href="#cb9-28"></a>        ct <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb9-29"><a href="#cb9-29"></a>    <span class="cf">return</span> ct</span>
-<span id="cb9-30"><a href="#cb9-30"></a></span>
-<span id="cb9-31"><a href="#cb9-31"></a>ct <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb9-32"><a href="#cb9-32"></a>running <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb9-33"><a href="#cb9-33"></a><span class="cf">while</span> running <span class="op">!=</span> <span class="dv">1</span><span class="op">&lt;&lt;</span>v2(mod) <span class="kw">or</span> ct  <span class="op">&lt;=</span> v2(mod):</span>
-<span id="cb9-34"><a href="#cb9-34"></a>    running <span class="op">=</span> (running<span class="op">&lt;&lt;</span><span class="dv">1</span>) <span class="op">%</span> mod</span>
-<span id="cb9-35"><a href="#cb9-35"></a>    ct <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb9-36"><a href="#cb9-36"></a></span>
-<span id="cb9-37"><a href="#cb9-37"></a><span class="co"># note that 2**ct % mod == 2**v2(mod)</span></span>
-<span id="cb9-38"><a href="#cb9-38"></a></span>
-<span id="cb9-39"><a href="#cb9-39"></a><span class="co"># so 2**n % mod = (2**ct)**(n//ct) * (2**(n%ct)) % mod</span></span>
-<span id="cb9-40"><a href="#cb9-40"></a></span>
-<span id="cb9-41"><a href="#cb9-41"></a>prod <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb9-42"><a href="#cb9-42"></a><span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">1</span>:</span>
-<span id="cb9-43"><a href="#cb9-43"></a>    prod <span class="op">=</span> (prod<span class="op">*</span>powmod2(n<span class="op">%</span>ct, mod))<span class="op">%</span> mod</span>
-<span id="cb9-44"><a href="#cb9-44"></a>    n <span class="op">=</span> (n<span class="op">//</span>ct)<span class="op">*</span>v2(mod)</span>
-<span id="cb9-45"><a href="#cb9-45"></a><span class="bu">print</span>(prod)</span></code></pre></div>
-<h2 id="problem--0.5">PROBLEM -0.5</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb10-2"><a href="#cb10-2"></a></span>
-<span id="cb10-3"><a href="#cb10-3"></a><span class="kw">def</span> check_magic_square(square):</span>
-<span id="cb10-4"><a href="#cb10-4"></a>    dia1, dia2 <span class="op">=</span> <span class="dv">0</span>, <span class="dv">0</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(square)):</span>
-<span id="cb10-6"><a href="#cb10-6"></a>        row, col <span class="op">=</span> <span class="dv">0</span>, <span class="dv">0</span></span>
-<span id="cb10-7"><a href="#cb10-7"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(square)):</span>
-<span id="cb10-8"><a href="#cb10-8"></a>            row <span class="op">+=</span> square[i,j]</span>
-<span id="cb10-9"><a href="#cb10-9"></a>            col <span class="op">+=</span> square[j,i]</span>
-<span id="cb10-10"><a href="#cb10-10"></a>        <span class="cf">if</span> row <span class="op">!=</span> col:</span>
-<span id="cb10-11"><a href="#cb10-11"></a>            <span class="cf">return</span>(<span class="st">&quot;This is not a magic square&quot;</span>)</span>
-<span id="cb10-12"><a href="#cb10-12"></a>        dia1 <span class="op">+=</span> square[i,i]</span>
-<span id="cb10-13"><a href="#cb10-13"></a>        dia2 <span class="op">+=</span> square[i,<span class="bu">len</span>(square)<span class="op">-</span>i<span class="dv">-1</span>]</span>
-<span id="cb10-14"><a href="#cb10-14"></a>    <span class="cf">if</span> dia1 <span class="op">==</span> dia2 <span class="op">==</span> row <span class="op">==</span> col:</span>
-<span id="cb10-15"><a href="#cb10-15"></a>        <span class="cf">return</span>(<span class="st">&quot;This is a magic square&quot;</span>)</span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>n <span class="op">=</span> <span class="dv">123412341234134</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>mod <span class="op">=</span> <span class="dv">10</span><span class="op">**</span><span class="dv">5</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="co"># ok, here is the &quot;basic&quot; recursive solution:</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="kw">def</span> powmod2(n, mod):</span>
+<span id="cb10-7"><a href="#cb10-7"></a>    <span class="cf">if</span> n<span class="op">==</span><span class="dv">1</span>:</span>
+<span id="cb10-8"><a href="#cb10-8"></a>        <span class="cf">return</span> <span class="dv">2</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a>    tmp <span class="op">=</span> powmod2(n<span class="op">//</span><span class="dv">2</span>, mod)</span>
+<span id="cb10-10"><a href="#cb10-10"></a>    <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb10-11"><a href="#cb10-11"></a>        <span class="cf">return</span> (tmp<span class="op">*</span>tmp)<span class="op">%</span>mod</span>
+<span id="cb10-12"><a href="#cb10-12"></a>    <span class="cf">else</span>:</span>
+<span id="cb10-13"><a href="#cb10-13"></a>        <span class="cf">return</span> (((tmp<span class="op">*</span>tmp)<span class="op">%</span>mod)<span class="op">*</span><span class="dv">2</span>)<span class="op">%</span>mod </span>
+<span id="cb10-14"><a href="#cb10-14"></a></span>
+<span id="cb10-15"><a href="#cb10-15"></a><span class="bu">print</span>(powmod2(n,mod))</span>
 <span id="cb10-16"><a href="#cb10-16"></a></span>
-<span id="cb10-17"><a href="#cb10-17"></a><span class="co">#test with magic square:</span></span>
-<span id="cb10-18"><a href="#cb10-18"></a><span class="bu">print</span>(check_magic_square(np.array([[<span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">6</span>],[<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>],[<span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">2</span>]])))</span>
-<span id="cb10-19"><a href="#cb10-19"></a><span class="co">#test with random order of numbers:</span></span>
-<span id="cb10-20"><a href="#cb10-20"></a><span class="bu">print</span>(check_magic_square(np.array([[<span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">5</span>],[<span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">7</span>],[<span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">2</span>]])))</span>
-<span id="cb10-21"><a href="#cb10-21"></a></span>
-<span id="cb10-22"><a href="#cb10-22"></a><span class="kw">def</span> create_magic_square(n): <span class="co">#only works with odd n</span></span>
-<span id="cb10-23"><a href="#cb10-23"></a>    magic_square <span class="op">=</span> np.zeros((n , n),dtype<span class="op">=</span><span class="bu">int</span>)</span>
-<span id="cb10-24"><a href="#cb10-24"></a>    i, j <span class="op">=</span> <span class="dv">0</span>, n<span class="op">//</span><span class="dv">2</span></span>
-<span id="cb10-25"><a href="#cb10-25"></a>    num <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb10-26"><a href="#cb10-26"></a>    <span class="cf">while</span> num <span class="op">&lt;=</span> n<span class="op">*</span>n:</span>
-<span id="cb10-27"><a href="#cb10-27"></a>        magic_square[i, j] <span class="op">=</span> num</span>
-<span id="cb10-28"><a href="#cb10-28"></a>        num <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb10-29"><a href="#cb10-29"></a>        nexti, nextj <span class="op">=</span> (i<span class="dv">-1</span>)<span class="op">%</span>n, (j<span class="op">+</span><span class="dv">1</span>)<span class="op">%</span>n</span>
-<span id="cb10-30"><a href="#cb10-30"></a>        <span class="cf">if</span> magic_square[nexti, nextj]:</span>
-<span id="cb10-31"><a href="#cb10-31"></a>            i<span class="op">+=</span><span class="dv">1</span></span>
-<span id="cb10-32"><a href="#cb10-32"></a>        <span class="cf">else</span>:</span>
-<span id="cb10-33"><a href="#cb10-33"></a>            i, j <span class="op">=</span> nexti, nextj</span>
-<span id="cb10-34"><a href="#cb10-34"></a>    <span class="bu">print</span>(magic_square)</span>
-<span id="cb10-35"><a href="#cb10-35"></a>    <span class="bu">print</span>(check_magic_square(magic_square))</span>
+<span id="cb10-17"><a href="#cb10-17"></a><span class="co"># here is the troll solution</span></span>
+<span id="cb10-18"><a href="#cb10-18"></a><span class="bu">print</span>(<span class="bu">pow</span>(<span class="dv">2</span>, n, mod))</span>
+<span id="cb10-19"><a href="#cb10-19"></a><span class="co"># yeah thats right, its a built in function!</span></span>
+<span id="cb10-20"><a href="#cb10-20"></a></span>
+<span id="cb10-21"><a href="#cb10-21"></a><span class="co"># here is a solution that is too cool for school. </span></span>
+<span id="cb10-22"><a href="#cb10-22"></a><span class="co"># so freaking pro</span></span>
+<span id="cb10-23"><a href="#cb10-23"></a></span>
+<span id="cb10-24"><a href="#cb10-24"></a><span class="kw">def</span> v2(n):</span>
+<span id="cb10-25"><a href="#cb10-25"></a>    ct <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb10-26"><a href="#cb10-26"></a>    <span class="cf">while</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb10-27"><a href="#cb10-27"></a>        n<span class="op">//=</span> <span class="dv">2</span></span>
+<span id="cb10-28"><a href="#cb10-28"></a>        ct <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb10-29"><a href="#cb10-29"></a>    <span class="cf">return</span> ct</span>
+<span id="cb10-30"><a href="#cb10-30"></a></span>
+<span id="cb10-31"><a href="#cb10-31"></a>ct <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb10-32"><a href="#cb10-32"></a>running <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb10-33"><a href="#cb10-33"></a><span class="cf">while</span> running <span class="op">!=</span> <span class="dv">1</span><span class="op">&lt;&lt;</span>v2(mod) <span class="kw">or</span> ct  <span class="op">&lt;=</span> v2(mod):</span>
+<span id="cb10-34"><a href="#cb10-34"></a>    running <span class="op">=</span> (running<span class="op">&lt;&lt;</span><span class="dv">1</span>) <span class="op">%</span> mod</span>
+<span id="cb10-35"><a href="#cb10-35"></a>    ct <span class="op">+=</span> <span class="dv">1</span></span>
 <span id="cb10-36"><a href="#cb10-36"></a></span>
-<span id="cb10-37"><a href="#cb10-37"></a>create_magic_square(<span class="dv">3</span>)</span></code></pre></div>
+<span id="cb10-37"><a href="#cb10-37"></a><span class="co"># note that 2**ct % mod == 2**v2(mod)</span></span>
+<span id="cb10-38"><a href="#cb10-38"></a></span>
+<span id="cb10-39"><a href="#cb10-39"></a><span class="co"># so 2**n % mod = (2**ct)**(n//ct) * (2**(n%ct)) % mod</span></span>
+<span id="cb10-40"><a href="#cb10-40"></a></span>
+<span id="cb10-41"><a href="#cb10-41"></a>prod <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb10-42"><a href="#cb10-42"></a><span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb10-43"><a href="#cb10-43"></a>    prod <span class="op">=</span> (prod<span class="op">*</span>powmod2(n<span class="op">%</span>ct, mod))<span class="op">%</span> mod</span>
+<span id="cb10-44"><a href="#cb10-44"></a>    n <span class="op">=</span> (n<span class="op">//</span>ct)<span class="op">*</span>v2(mod)</span>
+<span id="cb10-45"><a href="#cb10-45"></a><span class="bu">print</span>(prod)</span></code></pre></div>
+<h2 id="problem--0.5">PROBLEM -0.5</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb11-2"><a href="#cb11-2"></a></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="kw">def</span> check_magic_square(square):</span>
+<span id="cb11-4"><a href="#cb11-4"></a>    dia1, dia2 <span class="op">=</span> <span class="dv">0</span>, <span class="dv">0</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(square)):</span>
+<span id="cb11-6"><a href="#cb11-6"></a>        row, col <span class="op">=</span> <span class="dv">0</span>, <span class="dv">0</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(square)):</span>
+<span id="cb11-8"><a href="#cb11-8"></a>            row <span class="op">+=</span> square[i,j]</span>
+<span id="cb11-9"><a href="#cb11-9"></a>            col <span class="op">+=</span> square[j,i]</span>
+<span id="cb11-10"><a href="#cb11-10"></a>        <span class="cf">if</span> row <span class="op">!=</span> col:</span>
+<span id="cb11-11"><a href="#cb11-11"></a>            <span class="cf">return</span>(<span class="st">&quot;This is not a magic square&quot;</span>)</span>
+<span id="cb11-12"><a href="#cb11-12"></a>        dia1 <span class="op">+=</span> square[i,i]</span>
+<span id="cb11-13"><a href="#cb11-13"></a>        dia2 <span class="op">+=</span> square[i,<span class="bu">len</span>(square)<span class="op">-</span>i<span class="dv">-1</span>]</span>
+<span id="cb11-14"><a href="#cb11-14"></a>    <span class="cf">if</span> dia1 <span class="op">==</span> dia2 <span class="op">==</span> row <span class="op">==</span> col:</span>
+<span id="cb11-15"><a href="#cb11-15"></a>        <span class="cf">return</span>(<span class="st">&quot;This is a magic square&quot;</span>)</span>
+<span id="cb11-16"><a href="#cb11-16"></a></span>
+<span id="cb11-17"><a href="#cb11-17"></a><span class="co">#test with magic square:</span></span>
+<span id="cb11-18"><a href="#cb11-18"></a><span class="bu">print</span>(check_magic_square(np.array([[<span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">6</span>],[<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>],[<span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">2</span>]])))</span>
+<span id="cb11-19"><a href="#cb11-19"></a><span class="co">#test with random order of numbers:</span></span>
+<span id="cb11-20"><a href="#cb11-20"></a><span class="bu">print</span>(check_magic_square(np.array([[<span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">5</span>],[<span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">7</span>],[<span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">2</span>]])))</span>
+<span id="cb11-21"><a href="#cb11-21"></a></span>
+<span id="cb11-22"><a href="#cb11-22"></a><span class="kw">def</span> create_magic_square(n): <span class="co">#only works with odd n</span></span>
+<span id="cb11-23"><a href="#cb11-23"></a>    magic_square <span class="op">=</span> np.zeros((n , n),dtype<span class="op">=</span><span class="bu">int</span>)</span>
+<span id="cb11-24"><a href="#cb11-24"></a>    i, j <span class="op">=</span> <span class="dv">0</span>, n<span class="op">//</span><span class="dv">2</span></span>
+<span id="cb11-25"><a href="#cb11-25"></a>    num <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb11-26"><a href="#cb11-26"></a>    <span class="cf">while</span> num <span class="op">&lt;=</span> n<span class="op">*</span>n:</span>
+<span id="cb11-27"><a href="#cb11-27"></a>        magic_square[i, j] <span class="op">=</span> num</span>
+<span id="cb11-28"><a href="#cb11-28"></a>        num <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb11-29"><a href="#cb11-29"></a>        nexti, nextj <span class="op">=</span> (i<span class="dv">-1</span>)<span class="op">%</span>n, (j<span class="op">+</span><span class="dv">1</span>)<span class="op">%</span>n</span>
+<span id="cb11-30"><a href="#cb11-30"></a>        <span class="cf">if</span> magic_square[nexti, nextj]:</span>
+<span id="cb11-31"><a href="#cb11-31"></a>            i<span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb11-32"><a href="#cb11-32"></a>        <span class="cf">else</span>:</span>
+<span id="cb11-33"><a href="#cb11-33"></a>            i, j <span class="op">=</span> nexti, nextj</span>
+<span id="cb11-34"><a href="#cb11-34"></a>    <span class="bu">print</span>(magic_square)</span>
+<span id="cb11-35"><a href="#cb11-35"></a>    <span class="bu">print</span>(check_magic_square(magic_square))</span>
+<span id="cb11-36"><a href="#cb11-36"></a></span>
+<span id="cb11-37"><a href="#cb11-37"></a>create_magic_square(<span class="dv">3</span>)</span></code></pre></div>
 </body>
 </html>
