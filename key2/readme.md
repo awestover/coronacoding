@@ -1,6 +1,6 @@
 --- 
 title: Corona Club Day 2 Key
-author: Max (and one by Alek)
+author: Max, Alek, and Ziyong!!
 ---
 
 ## EZ warmup problems
@@ -91,6 +91,7 @@ estimate_pi(100000)
 ```
 
 ## PROBLEM 0
+**Ziyong's solution:**
 ```python
 def flipFlop(n, numberOfPeople): #n is the person who we check to play
     number = 1
@@ -134,6 +135,32 @@ def flipFlop(n, numberOfPeople): #n is the person who we check to play
             number += 1
 flipFlop(50, 100)
 ```
+
+**Alek's solution**
+```python
+direction = 1
+person = 0
+number_of_ppl = 100
+data = []
+for i in range(1,5600*2):
+    if i % 7 == 0:
+        direction *= -1
+    if i % 8 == 0:
+        person += direction
+    person += direction
+    person = person % number_of_ppl
+    data.append(person)
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+points = [(np.cos(data[i]*np.pi*2/100)*(i**0.5), np.sin(data[i]*np.pi*2/100)*(i**0.5)) for i in range(len(data))]
+plt.scatter([x[0] for x in points], [x[1] for x in points])
+plt.show()
+
+```
+![flipflop](flipflop.png)
+
 
 
 ## PROBLEM 1 
