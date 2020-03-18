@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Alek Westover" />
+  <title>tick tack toe</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../daystyle.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">tick tack toe</h1>
+<p class="author">Alek Westover</p>
+</header>
+<h1 id="problem-1">Problem 1</h1>
+<p>Make a representation of a tick tack toe board on the computer, and make a function that can nicely print the current board state</p>
+<h1 id="problem-1.23">Problem 1.23</h1>
+<p>Write a function that can determine the “state” of a board. i.e. is it a - X win state - O win state - tie state - game in progress state</p>
+<h1 id="problem-1.5">Problem 1.5</h1>
+<p>Make it so that two humans can play tick tack toe against one another with your program showing the board in between their moves, and asking them to input their moves.</p>
+<h1 id="problem-2">Problem 2</h1>
+<p>Hard code some logic for a tick tack toe bot. e.g. go in the center first</p>
+<h1 id="problem-3">Problem 3</h1>
+<p>Make some smarter logic - e.g. If there are 2 X’s in a row and the last square in the row is onoccupied (or more generally if any winning move is available) take it - e.g. block winning moves for the opponent</p>
+<h1 id="problem-3.5-super-duper-cool">Problem 3.5 (SUPER DUPER COOL)</h1>
+<p>A genetic agent has some DNA, i.e. a set of instructions for how to act. In the context of tick tack toe this could mean the DNA is a lookup table for what moves to perform, i.e. if the board is empty go in the center. To train a good genetic agent, repeat the following for many generations: - Create a lot of genetic agents and play them against each other - Take the algorithms that win the most, “survival of the fittest”: these algorithms survive to the next round - These algorithms should also have progeny - To generate progeny you basically should probably just create kids with DNA that is slightly mutated from their parents - good mutations should stay in the population and predominate over time - If you made a decent bot with hard coded logic then playing the genetic algorithms against that could also help them improve</p>
+<p>See if your genetic agent is any good.</p>
+<h1 id="problem-4">Problem 4</h1>
+<p>Upgrade it to be 5 by 5 tick tack toe, or bigger.</p>
+</body>
+</html>
