@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Joy, Leon, Alek" />
+  <title>Key 5</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../daystyle.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Key 5</h1>
+<p class="author">Joy, Leon, Alek</p>
+</header>
+<h1 id="problem-0-solution-by-joy-and-alek">Problem 0 (Solution by Joy, and Alek)</h1>
+<p>First we make a really simple, and really slow recursive solution to fib</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> fib(n):</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span> <span class="kw">or</span> n <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="cf">return</span> fib(n<span class="dv">-1</span>)<span class="op">+</span>fib(n<span class="dv">-2</span>)</span></code></pre></div>
+<p>This is super slow. Its running time is <span class="math inline">\(2^{O(n)}\)</span> (exponential). More specifically, its running time is <code>O(fib(n))</code>.</p>
+<p>Recall that we can solve it really easily in linear time:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> fibLin(n):</span>
+<span id="cb2-2"><a href="#cb2-2"></a>    lastFib <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>    currentFib <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n):</span>
+<span id="cb2-5"><a href="#cb2-5"></a>        tmp <span class="op">=</span> currentFib</span>
+<span id="cb2-6"><a href="#cb2-6"></a>        currentFib <span class="op">=</span> currentFib <span class="op">+</span> lastFib</span>
+<span id="cb2-7"><a href="#cb2-7"></a>        lastFib <span class="op">=</span> tmp</span>
+<span id="cb2-8"><a href="#cb2-8"></a>    <span class="cf">return</span> lastFib</span></code></pre></div>
+<p>But the recursive version is nice and simple. So let’s save it! We save it by <strong>memoization</strong>, storing previously computed answers.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a>fibs <span class="op">=</span> {}</span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="kw">def</span> fib(n):</span>
+<span id="cb3-5"><a href="#cb3-5"></a>    <span class="cf">try</span>:</span>
+<span id="cb3-6"><a href="#cb3-6"></a>        <span class="cf">return</span> fibs[n]</span>
+<span id="cb3-7"><a href="#cb3-7"></a>    <span class="cf">except</span>: </span>
+<span id="cb3-8"><a href="#cb3-8"></a>        <span class="kw">global</span> count</span>
+<span id="cb3-9"><a href="#cb3-9"></a>        count <span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>        <span class="cf">if</span> n<span class="op">==</span><span class="dv">1</span> <span class="kw">or</span> n<span class="op">==</span><span class="dv">2</span>:</span>
+<span id="cb3-11"><a href="#cb3-11"></a>            <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a>        <span class="cf">else</span>:</span>
+<span id="cb3-13"><a href="#cb3-13"></a>            result <span class="op">=</span> fib(n<span class="dv">-1</span>) <span class="op">+</span> fib(n<span class="dv">-2</span>)</span>
+<span id="cb3-14"><a href="#cb3-14"></a>            fibs[n] <span class="op">=</span> result</span>
+<span id="cb3-15"><a href="#cb3-15"></a>            <span class="cf">return</span> result</span></code></pre></div>
+<p>Now it is once again linear runtime!</p>
+<h1 id="problem-1-solution-by-joy">Problem 1 (solution by Joy)</h1>
+<p>First we solve it with bit arithmetic. Note that we can think of a subset as a binary string, where the <span class="math inline">\(j\)</span>-th digit of the binary string is a boolean variable that indicates whether the <span class="math inline">\(j\)</span>-th element of the list is included in the subset. We can simply enumerate all <span class="math inline">\(n\)</span> digit binary strings and generate the corresponding subsets:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">def</span> powerSet():</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    array <span class="op">=</span> [<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>]</span>
+<span id="cb4-3"><a href="#cb4-3"></a>    powerSet <span class="op">=</span> []</span>
+<span id="cb4-4"><a href="#cb4-4"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span><span class="op">**</span><span class="bu">len</span>(array)):</span>
+<span id="cb4-5"><a href="#cb4-5"></a>        subset <span class="op">=</span> []</span>
+<span id="cb4-6"><a href="#cb4-6"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(array)):</span>
+<span id="cb4-7"><a href="#cb4-7"></a>            <span class="cf">if</span>(<span class="dv">2</span><span class="op">**</span>j <span class="op">&amp;</span> i):</span>
+<span id="cb4-8"><a href="#cb4-8"></a>                subset.append(array[j])</span>
+<span id="cb4-9"><a href="#cb4-9"></a>        powerSet.append(subset)</span>
+<span id="cb4-10"><a href="#cb4-10"></a></span>
+<span id="cb4-11"><a href="#cb4-11"></a>    <span class="bu">print</span>(powerSet)</span></code></pre></div>
+<p>Bit arithmetic is super cool. Here are some key opperators</p>
+<ul>
+<li><code>&amp;</code> and, e.g. <code>1&amp;0 = 0</code></li>
+<li><code>|</code> or, e.g. <code>1|0 = 1</code></li>
+<li><code>^</code> xor, e.g. <code>1^0 = 1</code></li>
+<li><code>&lt;&lt;</code> bit shift, e.g. <code>1&lt;&lt;5 = 32</code></li>
+<li><code>&gt;&gt;</code> bit shift, e.g. <code>8&gt;&gt;1 = 4</code></li>
+<li><code>~</code> not, e.g. <code>~3 &amp; 7 = 4</code></li>
+</ul>
+<p>bit arithmetic is super fast.</p>
+<p>Some useful functions in python related to bit arithmetic: - <code>bin</code> binary representation of a number - <code>hex</code> hexideciaml representation of a number</p>
+<p>We can also solve it recursively, it’s pretty simple too:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">def</span> psetrecursive(a):</span>
+<span id="cb5-2"><a href="#cb5-2"></a>    <span class="cf">if</span> <span class="bu">len</span>(a) <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb5-3"><a href="#cb5-3"></a>        <span class="cf">return</span> [[], a]</span>
+<span id="cb5-4"><a href="#cb5-4"></a>    alek <span class="op">=</span> psetrecurive(a[<span class="dv">1</span>:])</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    powerset <span class="op">=</span> []</span>
+<span id="cb5-6"><a href="#cb5-6"></a>    <span class="cf">for</span> i <span class="kw">in</span> alek:</span>
+<span id="cb5-7"><a href="#cb5-7"></a>        powerset.append(i)</span>
+<span id="cb5-8"><a href="#cb5-8"></a>        powerset.append(i<span class="op">+</span>a[<span class="dv">0</span>])</span>
+<span id="cb5-9"><a href="#cb5-9"></a>    <span class="cf">return</span> powerset</span></code></pre></div>
+<h1 id="problem-something-dynamic-programming-edit-distance">Problem something (dynamic programming edit distance)</h1>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">def</span> prob2(string1, string2):</span>
+<span id="cb6-2"><a href="#cb6-2"></a>    <span class="cf">if</span>(string1 <span class="op">==</span> string2):</span>
+<span id="cb6-3"><a href="#cb6-3"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>    <span class="cf">if</span>(string1 <span class="op">==</span> <span class="dv">0</span> <span class="kw">or</span> string2 <span class="op">==</span><span class="dv">0</span>):</span>
+<span id="cb6-5"><a href="#cb6-5"></a>        <span class="cf">return</span> <span class="bu">max</span>(<span class="bu">len</span>(string1), <span class="bu">len</span>(string2))</span>
+<span id="cb6-6"><a href="#cb6-6"></a>    <span class="cf">if</span>(string1[<span class="dv">0</span>] <span class="op">==</span> string2[<span class="dv">0</span>]):</span>
+<span id="cb6-7"><a href="#cb6-7"></a>        <span class="cf">return</span> prob2(string1[<span class="dv">1</span>:], string2[<span class="dv">1</span>:])</span>
+<span id="cb6-8"><a href="#cb6-8"></a>    <span class="cf">return</span> <span class="bu">min</span>(<span class="dv">1</span><span class="op">+</span>prob2(string1[<span class="dv">1</span>:],string2), <span class="dv">1</span><span class="op">+</span>prob2(string1,string2[<span class="dv">1</span>:]), <span class="dv">1</span><span class="op">+</span>prob2(string[<span class="dv">1</span>:],string[<span class="dv">1</span>:]))</span>
+<span id="cb6-9"><a href="#cb6-9"></a></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="bu">print</span>(prob2(<span class="st">&quot;alek&quot;</span>, <span class="st">&quot;alik&quot;</span>)) <span class="co"># 1</span></span></code></pre></div>
+</body>
+</html>
