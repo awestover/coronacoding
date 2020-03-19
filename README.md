@@ -1,6 +1,11 @@
 # coronacoding
 Coronavacation Coding Club. This is a resource to help people learn to code, specifically over coronavacation. 
 
+## how to compile a markdown file to a website:
+```sh
+pandoc -s -css style.css --mathjax readme.md -o index.html
+```
+
 Potential topics for future classes
 
 - Talk about binary search
