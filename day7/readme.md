@@ -27,6 +27,7 @@ Specifically we will be talking about the following:
 First open your terminal application. (powershell on windows, terminal on mac / linux)
 
 **Useful commands:**
+
 - pwd (print working directory)
 - ls (list directory contents)
 - cd (change directory)
@@ -35,6 +36,7 @@ First open your terminal application. (powershell on windows, terminal on mac / 
 - rm (remove)
 - touch (make a file)
 - cat (print file contents)
+- mkdir (make a directory)
 
 On Mac you can type `man cp` (for instance) to learn what a command does, or you can google it.
 
