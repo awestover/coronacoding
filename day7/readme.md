@@ -73,6 +73,16 @@ e.g. the root directory (which should be on your desktop) has a folder for the d
 # Problem 7
 Using the git cli, push your coronacodingclub stuff to your github repo
 
+Hint: here are some useful commands
+
+- git add .
+- git commit -m "message"
+- git status
+- git pull origin master
+- git push origin master
+- git log
+- git clone xxx
+
 # Problem 7.5
 Fork Alek's coronacoding github repo, make a local copy of it, make an edit (e.g. fix a typo, there are a lot of them!) and figure out how to issue a pull request, and make alek merge your pull request.
 
@@ -100,5 +110,9 @@ You can read about zsh [here](https://ohmyz.sh/)
 Make a "big" project (i.e. project with multiple files) in `python`.
 Import a `python` function that you write in one of the files into another file!
 e.g. write a gcd computing function in one file, and then have a bunch of other number theory files that use it, e.g. a file to create the lcm(i,j) graphic on the coronacoding club homepage.
+
+# Problem 11
+Set up the subl command.
+[reference website](https://ashleynolan.co.uk/blog/launching-sublime-from-the-terminal )
 
 
