@@ -70,7 +70,7 @@ Demo: reverse cipher
 ```
 
 # Problem 8
-  Make a program that does a caesar cipher. That is, it takes in some english text, and cyclically shifts all the letters by some key, for example 1.
+  Make a program that does a Caesar Cipher. That is, it takes in some english text, and cyclically shifts all the letters by some key, for example 1.
 
 
 # Signal Stuff
