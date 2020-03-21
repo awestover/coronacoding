@@ -15,8 +15,8 @@ double_loop_loop(4)
 ```
 
 ## Problem 1
-> Make a function that can count how many the word "like" occurs in a sentece you input, and also in the following sentence (case insensitive, i.e. capitalized counts):
-> "Like it's really easy, like dude what're you like doing like what is this question, like this seems dumb like; oh man liken this tutorial unto yourselves like get scammed like wow like like like like ziyong is a pro yah like know?"
+> Make a function that can count how many the word "like" occurs in a sentence you input, and also in the following sentence (case insensitive, i.e. capitalized counts):
+> "Like it's really easy, like dude what're you like doing like what is this question, like this seems dumb like; oh man liken this tutorial unto yourselves like get scammed like wow like like like like Ziyong is a pro yah like know?"
 
 ## Problem 1.5
 > Make a function that can print out every other word in a string that you input, and also in the sentence from the previous problem.
