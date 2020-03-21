@@ -1,5 +1,5 @@
 # coronacoding
-Coronavacation Coding Club. This is a resource to help people learn to code, specifically over coronavacation. Hi alek, ziyong wsd here 
+Coronavacation Coding Club. This is a resource to help people learn to code, specifically over coronavacation. 
 
 ## how to compile a markdown file to a website:
 ```sh

@@ -25,7 +25,7 @@ Demo program:
   -From "Python for kids"
 
 # Problem 2
-  Create a program that asks someone for their name, adn then compliments them.
+  Create a program that asks someone for their name, and then compliments them.
 
 # Problem 3
   Create a number guessing game. ("Im thinking of a number in [1,100]" User says "high and low", computer guesses numbers)
