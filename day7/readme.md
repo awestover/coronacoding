@@ -75,13 +75,13 @@ Using the git cli, push your coronacodingclub stuff to your github repo
 
 Hint: here are some useful commands
 
-- git add .
-- git commit -m "message"
-- git status
-- git pull origin master
-- git push origin master
-- git log
-- git clone xxx
+- `git add .`
+- `git commit -m "message"`
+- `git status`
+- `git pull origin master`
+- `git push origin master`
+- `git log`
+- `git clone xxx`
 
 # Problem 7.5
 Fork Alek's coronacoding github repo, make a local copy of it, make an edit (e.g. fix a typo, there are a lot of them!) and figure out how to issue a pull request, and make alek merge your pull request.
