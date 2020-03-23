@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Title</title>
+    <title>Alek's Personal Blog</title>
+    <style type="text/css" media="screen">
+      body{
+        background-color: black;
+        color: red;
+      }
+    </style>
+    <!-- jquery cdn --> <!-- this is a comment -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
-    <h1>THis is a header</h1>
+    <h1>Who is Alek?</h1>
+    <h2>What is alek?</h2>
+    <p>This is a description:</p>
+    <ul>
+      <li>He is a person</li>
+      <li>He is 6'2" or 5 7 or 5 9</li>
+      <li>He is making a list</li>
+      <li>here is another element of the list</li>
+      <li>wow what a website</li>
+      <li>alek is really good at making websites super desciprtionve and interstggnasf to read</li>
+    </ul>
+    <a href="awestover.github.io">alek's other website</a>
+    <p>lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>This is some more content</p>
+
+    <h1>Login to view exclusive content</h1>
+    <input type="text" value="username" name="username" id="username"/>
+    <input type="password" value="password" name="password" id="password"/>
+    <button onclick="submitFunction()">Submit</button>
+    
+    <script>
+      // javascript
+      function submitFunction(){
+        alert("submitting");
+        // interact with python
+        $.post("/data", {
+          "name": $("#username").val(), 
+          "username": $("#password").val()
+        }); 
+      }
+    </script>
   </body>
 </html>
