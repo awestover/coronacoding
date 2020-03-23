@@ -11,9 +11,10 @@ def helloWorld():
 def index():
     return render_template("index.html")
 
-@app.route("/data", methods=("POST", "GET"))
+@app.route("/data", methods=("POST",))
 def data():
-    print(request.json)
+    print(request.form)
+    return "I see you " + request.form["username"]
 
 app.run(debug=True, host='0.0.0.0')
 

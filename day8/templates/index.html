@@ -40,6 +40,9 @@
         $.post("/data", {
           "name": $("#username").val(), 
           "username": $("#password").val()
+        }, function(data){
+          alert("got a callback");
+          alert(data);
         }); 
       }
     </script>
