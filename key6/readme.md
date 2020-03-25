@@ -16,13 +16,25 @@ def print_board(board_state):
         print(" ".join(board_state[i*n:(i+1)*n]))
 
 def computer_move(board_state):
+    computer_symbol = "X"
+    opponent_symbol = "O"
+    # if there is a win available take it, 
+    # if the opponent has a win available block it
+    for symbol in (computer_symbol, opponent_symbol):
+        for i in range(n**2):
+            tmp_board_state = board_state[:] # make a copy of board_state
+            tmp_board_state[i] = symbol
+            if board_value(tmp_board_state) == symbol:
+                return i
+    return random_computer_move(board_state)
+
+def random_computer_move(board_state):
     proposed_move = (n**2)//2 # center
     while board_state[proposed_move] != "E":
         proposed_move = np.random.randint(n**2)
     return proposed_move
 
-# returns X if X has won, O if O has won, TIE if it is a tie, and NONE if the
-# game is still in progress
+# returns X if X has won, O if O has won, TIE if it is a tie, and NONE if the game is still in progress
 def board_value(board_state):
     for i in range(n):
         horizontal_ct = 0
@@ -45,5 +57,6 @@ def board_value(board_state):
         if board_state[i] == "E":
             return "NONE"
     return "TIE"
+
 ```
 

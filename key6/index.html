@@ -98,34 +98,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-9"><a href="#cb1-9"></a>        <span class="bu">print</span>(<span class="st">&quot; &quot;</span>.join(board_state[i<span class="op">*</span>n:(i<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>n]))</span>
 <span id="cb1-10"><a href="#cb1-10"></a></span>
 <span id="cb1-11"><a href="#cb1-11"></a><span class="kw">def</span> computer_move(board_state):</span>
-<span id="cb1-12"><a href="#cb1-12"></a>    proposed_move <span class="op">=</span> (n<span class="op">**</span><span class="dv">2</span>)<span class="op">//</span><span class="dv">2</span> <span class="co"># center</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a>    <span class="cf">while</span> board_state[proposed_move] <span class="op">!=</span> <span class="st">&quot;E&quot;</span>:</span>
-<span id="cb1-14"><a href="#cb1-14"></a>        proposed_move <span class="op">=</span> np.random.randint(n<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb1-15"><a href="#cb1-15"></a>    <span class="cf">return</span> proposed_move</span>
-<span id="cb1-16"><a href="#cb1-16"></a></span>
-<span id="cb1-17"><a href="#cb1-17"></a><span class="co"># returns X if X has won, O if O has won, TIE if it is a tie, and NONE if the</span></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># game is still in progress</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="kw">def</span> board_value(board_state):</span>
-<span id="cb1-20"><a href="#cb1-20"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
-<span id="cb1-21"><a href="#cb1-21"></a>        horizontal_ct <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a>        vertical_ct <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-23"><a href="#cb1-23"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(n):</span>
-<span id="cb1-24"><a href="#cb1-24"></a>            horizontal_ct <span class="op">+=</span> points[board_state[i<span class="op">*</span>n <span class="op">+</span> j]]</span>
-<span id="cb1-25"><a href="#cb1-25"></a>            vertical_ct <span class="op">+=</span> points[board_state[j<span class="op">*</span>n <span class="op">+</span> i]]</span>
-<span id="cb1-26"><a href="#cb1-26"></a>        <span class="cf">if</span> horizontal_ct <span class="op">==</span> n <span class="kw">or</span> vertical_ct <span class="op">==</span> n:</span>
-<span id="cb1-27"><a href="#cb1-27"></a>            <span class="cf">return</span> <span class="st">&quot;X&quot;</span></span>
-<span id="cb1-28"><a href="#cb1-28"></a>        <span class="cf">if</span> horizontal_ct <span class="op">==</span> <span class="op">-</span>n <span class="kw">or</span> vertical_ct <span class="op">==</span> <span class="op">-</span>n:</span>
-<span id="cb1-29"><a href="#cb1-29"></a>            <span class="cf">return</span> <span class="st">&quot;O&quot;</span></span>
-<span id="cb1-30"><a href="#cb1-30"></a>    </span>
-<span id="cb1-31"><a href="#cb1-31"></a>    diagonal_down <span class="op">=</span> <span class="dv">0</span> </span>
-<span id="cb1-32"><a href="#cb1-32"></a>    diagonal_up <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-33"><a href="#cb1-33"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
-<span id="cb1-34"><a href="#cb1-34"></a>        diagonal_down <span class="op">+=</span> points[board_state[i<span class="op">*</span>n<span class="op">+</span>i]]</span>
-<span id="cb1-35"><a href="#cb1-35"></a>        diagonal_up <span class="op">+=</span> points[board_state[(n<span class="op">-</span>i<span class="dv">-1</span>)<span class="op">*</span>n<span class="op">+</span>i]]</span>
-<span id="cb1-36"><a href="#cb1-36"></a></span>
-<span id="cb1-37"><a href="#cb1-37"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">9</span>):</span>
-<span id="cb1-38"><a href="#cb1-38"></a>        <span class="cf">if</span> board_state[i] <span class="op">==</span> <span class="st">&quot;E&quot;</span>:</span>
-<span id="cb1-39"><a href="#cb1-39"></a>            <span class="cf">return</span> <span class="st">&quot;NONE&quot;</span></span>
-<span id="cb1-40"><a href="#cb1-40"></a>    <span class="cf">return</span> <span class="st">&quot;TIE&quot;</span></span></code></pre></div>
+<span id="cb1-12"><a href="#cb1-12"></a>    computer_symbol <span class="op">=</span> <span class="st">&quot;X&quot;</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>    opponent_symbol <span class="op">=</span> <span class="st">&quot;O&quot;</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>    <span class="co"># if there is a win available take it, </span></span>
+<span id="cb1-15"><a href="#cb1-15"></a>    <span class="co"># if the opponent has a win available block it</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a>    <span class="cf">for</span> symbol <span class="kw">in</span> (computer_symbol, opponent_symbol):</span>
+<span id="cb1-17"><a href="#cb1-17"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n<span class="op">**</span><span class="dv">2</span>):</span>
+<span id="cb1-18"><a href="#cb1-18"></a>            tmp_board_state <span class="op">=</span> board_state[:] <span class="co"># make a copy of board_state</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a>            tmp_board_state[i] <span class="op">=</span> symbol</span>
+<span id="cb1-20"><a href="#cb1-20"></a>            <span class="cf">if</span> board_value(tmp_board_state) <span class="op">==</span> symbol:</span>
+<span id="cb1-21"><a href="#cb1-21"></a>                <span class="cf">return</span> i</span>
+<span id="cb1-22"><a href="#cb1-22"></a>    <span class="cf">return</span> random_computer_move(board_state)</span>
+<span id="cb1-23"><a href="#cb1-23"></a></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="kw">def</span> random_computer_move(board_state):</span>
+<span id="cb1-25"><a href="#cb1-25"></a>    proposed_move <span class="op">=</span> (n<span class="op">**</span><span class="dv">2</span>)<span class="op">//</span><span class="dv">2</span> <span class="co"># center</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a>    <span class="cf">while</span> board_state[proposed_move] <span class="op">!=</span> <span class="st">&quot;E&quot;</span>:</span>
+<span id="cb1-27"><a href="#cb1-27"></a>        proposed_move <span class="op">=</span> np.random.randint(n<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb1-28"><a href="#cb1-28"></a>    <span class="cf">return</span> proposed_move</span>
+<span id="cb1-29"><a href="#cb1-29"></a></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="co"># returns X if X has won, O if O has won, TIE if it is a tie, and NONE if the game is still in progress</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="kw">def</span> board_value(board_state):</span>
+<span id="cb1-32"><a href="#cb1-32"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb1-33"><a href="#cb1-33"></a>        horizontal_ct <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-34"><a href="#cb1-34"></a>        vertical_ct <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-35"><a href="#cb1-35"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb1-36"><a href="#cb1-36"></a>            horizontal_ct <span class="op">+=</span> points[board_state[i<span class="op">*</span>n <span class="op">+</span> j]]</span>
+<span id="cb1-37"><a href="#cb1-37"></a>            vertical_ct <span class="op">+=</span> points[board_state[j<span class="op">*</span>n <span class="op">+</span> i]]</span>
+<span id="cb1-38"><a href="#cb1-38"></a>        <span class="cf">if</span> horizontal_ct <span class="op">==</span> n <span class="kw">or</span> vertical_ct <span class="op">==</span> n:</span>
+<span id="cb1-39"><a href="#cb1-39"></a>            <span class="cf">return</span> <span class="st">&quot;X&quot;</span></span>
+<span id="cb1-40"><a href="#cb1-40"></a>        <span class="cf">if</span> horizontal_ct <span class="op">==</span> <span class="op">-</span>n <span class="kw">or</span> vertical_ct <span class="op">==</span> <span class="op">-</span>n:</span>
+<span id="cb1-41"><a href="#cb1-41"></a>            <span class="cf">return</span> <span class="st">&quot;O&quot;</span></span>
+<span id="cb1-42"><a href="#cb1-42"></a>    </span>
+<span id="cb1-43"><a href="#cb1-43"></a>    diagonal_down <span class="op">=</span> <span class="dv">0</span> </span>
+<span id="cb1-44"><a href="#cb1-44"></a>    diagonal_up <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-45"><a href="#cb1-45"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb1-46"><a href="#cb1-46"></a>        diagonal_down <span class="op">+=</span> points[board_state[i<span class="op">*</span>n<span class="op">+</span>i]]</span>
+<span id="cb1-47"><a href="#cb1-47"></a>        diagonal_up <span class="op">+=</span> points[board_state[(n<span class="op">-</span>i<span class="dv">-1</span>)<span class="op">*</span>n<span class="op">+</span>i]]</span>
+<span id="cb1-48"><a href="#cb1-48"></a></span>
+<span id="cb1-49"><a href="#cb1-49"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">9</span>):</span>
+<span id="cb1-50"><a href="#cb1-50"></a>        <span class="cf">if</span> board_state[i] <span class="op">==</span> <span class="st">&quot;E&quot;</span>:</span>
+<span id="cb1-51"><a href="#cb1-51"></a>            <span class="cf">return</span> <span class="st">&quot;NONE&quot;</span></span>
+<span id="cb1-52"><a href="#cb1-52"></a>    <span class="cf">return</span> <span class="st">&quot;TIE&quot;</span></span></code></pre></div>
 </body>
 </html>
