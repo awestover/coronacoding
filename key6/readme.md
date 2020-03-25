@@ -50,12 +50,13 @@ def play_game(strategyX, strategyO):
             old_board_state = board_state[:]
             print_board(board_state)
             move = strategy(board_state, player)
+            print(f"^(move = {player}({board_state}))", strategy)
             if board_state[move] != "E" or board_state != old_board_state or not (0 <= move < n**2): 
                 print(f"{player} is a CHEATER, tried move={move}")
                 return other_player
             board_state[move] = player
             if board_value(board_state) != "NONE":
-                print_board(board_state)
+                #  print_board(board_state)
                 return board_value(board_state)
 
 
@@ -68,37 +69,37 @@ def ziyong_computer_move(boardState, player):
         if (boardState[i] == boardState[i + 3] == player):
             if (boardState[i + 6] == "E"):
                 return i + 6
-        elif (boardState[i + 3] == boardState[i + 6] == player):
+        if (boardState[i + 3] == boardState[i + 6] == player):
             if (boardState[i] == "E"):
                 return i
-        elif (boardState[i] == boardState[i + 6] == player):
+        if (boardState[i] == boardState[i + 6] == player):
             if (boardState[i + 3] == "E"):
                 return i + 3
-        elif (boardState[i * 3] == boardState[i * 3 + 1] == player):
+        if (boardState[i * 3] == boardState[i * 3 + 1] == player):
             if (boardState[i * 3 + 2] == "E"):
                 return i * 3 + 2
-        elif (boardState[i * 3 + 1] == boardState[i * 3 + 2] == player):
+        if (boardState[i * 3 + 1] == boardState[i * 3 + 2] == player):
             if (boardState[i * 3] == "E"):
                 return i * 3 
-        elif (boardState[i * 3] == boardState[i * 3 + 2] == player):
+        if (boardState[i * 3] == boardState[i * 3 + 2] == player):
             if (boardState[i * 3 + 1] == "E"):
                 return i * 3 + 1
     if (boardState[0] == boardState[4] == player):
         if (boardState[8] == "E"):
             return 8
-    elif (boardState[0] == boardState[8] == player):
+    if (boardState[0] == boardState[8] == player):
         if (boardState[4] == "E"):
             return 4
-    elif (boardState[4] == boardState[8] == player):
+    if (boardState[4] == boardState[8] == player):
         if (boardState[0] == "E"):
             return 0
-    elif (boardState[2] == boardState[4] == player):
+    if (boardState[2] == boardState[4] == player):
         if (boardState[6] == "E"):
             return 6
-    elif (boardState[2] == boardState[6] == player):
+    if (boardState[2] == boardState[6] == player):
         if (boardState[4] == "E"):
             return 4
-    elif (boardState[6] == boardState[4] == player):
+    if (boardState[6] == boardState[4] == player):
         if (boardState[2] == "E"):
             return 2
 
@@ -107,38 +108,38 @@ def ziyong_computer_move(boardState, player):
         if (boardState[i] == boardState[i + 3] == other_player):
             if (boardState[i + 6] == "E"):
                 return i + 6
-        elif (boardState[i + 3] == boardState[i + 6] == other_player):
+        if (boardState[i + 3] == boardState[i + 6] == other_player):
             if (boardState[i] == "E"):
                 return i
-        elif (boardState[i] == boardState[i + 6] == other_player):
+        if (boardState[i] == boardState[i + 6] == other_player):
             if (boardState[i + 3] == "E"):
                 return i + 3
-        elif (boardState[i * 3] == boardState[i * 3 + 1] == other_player):
+        if (boardState[i * 3] == boardState[i * 3 + 1] == other_player):
             if (boardState[i * 3 + 2] == "E"):
                 return  i * 3 + 2
-        elif (boardState[i * 3 + 1] == boardState[i * 3 + 2] == other_player):
+        if (boardState[i * 3 + 1] == boardState[i * 3 + 2] == other_player):
             if (boardState[i * 3] == "E"):
                 return i * 3
-        elif (boardState[i * 3] == boardState[i * 3 + 2] == other_player):
+        if (boardState[i * 3] == boardState[i * 3 + 2] == other_player):
             if (boardState[i * 3 + 1] == "E"):
                 return i * 3 + 1
 
     if (boardState[0] == boardState[4] == other_player):
         if (boardState[8] == "E"):
             return 8
-    elif (boardState[0] == boardState[8] == other_player):
+    if (boardState[0] == boardState[8] == other_player):
         if (boardState[4] == "E"):
             return 4
-    elif (boardState[4] == boardState[8] == other_player):
+    if (boardState[4] == boardState[8] == other_player):
         if (boardState[0] == "E"):
             return 0
-    elif (boardState[2] == boardState[4] == other_player):
+    if (boardState[2] == boardState[4] == other_player):
         if (boardState[6] == "E"):
             return 6
-    elif (boardState[2] == boardState[6] == other_player):
+    if (boardState[2] == boardState[6] == other_player):
         if (boardState[4] == "E"):
             return 4
-    elif (boardState[6] == boardState[4] == other_player):
+    if (boardState[6] == boardState[4] == other_player):
         if (boardState[2] == "E"):
             return 2
     #check corners: 0, 2, 6, 8
@@ -170,6 +171,7 @@ def alek_computer_move(board_state, computer_symbol):
                     return i
 
     def random_computer_move(board_state):
+        print("USING RANDOM MOVE")
         proposed_move = (n**2)//2 # center
         while board_state[proposed_move] != "E":
             proposed_move = np.random.randint(n**2)
@@ -180,13 +182,27 @@ def alek_computer_move(board_state, computer_symbol):
 
 # play games
 #  X vs O
-for i in range(100):
+total_rounds = 1000
+alek_wins = 0
+ziyong_wins = 0
+for i in range(total_rounds):
     if np.random.rand() < 0.5:
         winner = play_game(alek_computer_move, ziyong_computer_move)
         print(f"ALEK (X) VS ZIYONG (O), RESULT: {winner}\n\n\n")
+        if winner=="X":
+            alek_wins += 1
+        if winner == "O":
+            ziyong_wins+=1
     else:
         winner = play_game(ziyong_computer_move, alek_computer_move)
         print(f"ALEK (X) VS ZIYONG (O), RESULT: {winner}\n\n\n")
+        if winner =="O":
+            alek_wins += 1
+        elif winner=="X":
+            ziyong_wins+=1
+        
+print(f"ALEK WON {alek_wins} / {total_rounds}")
+print(f"ZIYONG WON {ziyong_wins} / {total_rounds}")
 
 ```
 
