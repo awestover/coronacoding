@@ -3,8 +3,6 @@ title: Tic Tac Toe
 author: Alek Westover
 ---
 
-## currently this is broken
-
 ```python
 import numpy as np
 
