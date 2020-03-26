@@ -23,11 +23,11 @@ def board_value(board_state):
     
     diagonal_down = 0 
     diagonal_up = 0
-    for i in range(3):
+    for i in range(n):
         diagonal_down += points[board_state[i*n+i]]
         diagonal_up += points[board_state[(n-i-1)*n+i]]
 
-    for i in range(9):
+    for i in range(n**2):
         if board_state[i] == "E":
             return "NONE"
     return "TIE"
