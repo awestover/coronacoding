@@ -8,9 +8,7 @@ note:
 """
 
 import numpy as np
-
 n = 3
-
 
 """
 What is a genetic algorithm?
@@ -144,8 +142,10 @@ pop_size = 100
 population = [random_bot() for i in range(pop_size)]
 
 num_matches = 20
+best_bot = 0
+num_generations = 5
 
-for generation in range(10):
+for generation in range(num_generations):
     # play the bots against each other, 
     # decide which bots are the best
 
@@ -178,6 +178,9 @@ for generation in range(10):
 
     next_population = []
 
+    if generation == num_generations-1:
+        best_bot = population[np.argmax(bot_scores)]
+
     for j in range(pop_size):
         if bot_scores[j] > 1:
             next_population.append(population[j])
@@ -188,4 +191,16 @@ for generation in range(10):
     population = next_population
     print(bot_scores)
 
+
+board_state = "E"*n**2
+computer_strategy = bot_strategy(best_bot)
+while board_value(board_state) == "NONE":
+    board_state = modify_val(board_state, computer_strategy(board_state, "X"), "X")
+    print_board(board_state)
+    if board_value(board_state) != "NONE":
+        break
+    user_move = int(input("O move? :\t"))
+    board_state = modify_val(board_state, user_move, "O")
+    print_board(board_state)
+        
 
