@@ -1,0 +1,36 @@
+body {
+  background-color: #e3decf;
+}
+
+.container {
+  padding: 2%;
+  background-color: red;
+}
+
+.blockything {
+  background-color: blue;
+  padding: 20px;
+}
+
+#picturediv {
+  background-color: green;
+  width: 50%;
+  position: relative; 
+  left: 0;
+}
+
+#ppp {
+  color: #00ffff;
+}
+
+#picturystuff {
+  width: 100%;
+}
+
+#picturedescription {
+  background-color: black;
+  width: 25%;
+  position: relative;
+  right: 0;
+}
+
