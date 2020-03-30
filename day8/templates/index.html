@@ -2,14 +2,9 @@
 <html>
   <head>
     <title>Alek's Personal Blog</title>
-    <style type="text/css" media="screen">
-      body{
-        background-color: black;
-        color: red;
-      }
-    </style>
-    <!-- jquery cdn --> <!-- this is a comment -->
+    <!-- jquery cdn::: --> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
   </head>
   <body>
     <h1>Who is Alek?</h1>
@@ -30,7 +25,12 @@
     <h1>Login to view exclusive content</h1>
     <input type="text" value="username" name="username" id="username"/>
     <input type="password" value="password" name="password" id="password"/>
+    <input type="text" value="comment" name="comment" id="comment"/>
     <button onclick="submitFunction()">Submit</button>
+
+    <div id="comments">
+      
+    </div>
     
     <script>
       // javascript
@@ -38,13 +38,25 @@
         alert("submitting");
         // interact with python
         $.post("/data", {
-          "name": $("#username").val(), 
-          "username": $("#password").val()
+          "username": $("#username").val(), 
+          "password": $("#password").val(),
+          "comment": $("#comment").val()
         }, function(data){
           alert("got a callback");
           alert(data);
         }); 
       }
+    </script>
+
+
+    <script>
+      $.get("getComments", function(data){
+        for (let i = 0; i < data.length; i++){
+          let htmlElement = `<div class="comments"><h3>name: ${data[i].name}</h3> <p>comment: ${data[i].comment}</p></div>`;
+          // this is a comment
+          $("#comments").append(htmlElement);
+        }
+      });
     </script>
   </body>
 </html>
