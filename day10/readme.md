@@ -133,5 +133,7 @@ with open("encoded_text.txt", "wb") as f:
 
 ```
 
-You can also see this code on Alek's blog, at ![compression blogpost](https://awestover.github.io/skyspace/compression/)
+You can also see this code on Alek's blog, at [compression blogpost](https://awestover.github.io/skyspace/compression/).
+
+Wikipedia is also a great resource.
 
