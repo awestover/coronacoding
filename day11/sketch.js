@@ -23,51 +23,57 @@ let KEY_CODES = {
 }
 
 let points = 0;
+let ct = 0;
 
 function draw(){
   background("#00ffff");
   fill(0,0,0);
-  text("Points: "+points, width/2, 50);
+  text("Points: "+points, width/2, 50); 
+  ct += 1;
 
   image(avatarImg, avatarPos.x, avatarPos.y, IMG_WIDTH, IMG_HEIGHT);
 
   push();
-  translate(otherPos.x, otherPos.y);
+  translate(otherPos.x+IMG_WIDTH/2, otherPos.y+IMG_HEIGHT/2);
   scale(-1, 1);
-  image(avatarImg, 0, 0, 75, 100);
+  image(avatarImg, -IMG_WIDTH/2, -IMG_HEIGHT/2, IMG_WIDTH, IMG_HEIGHT);
   pop();
 
   otherPos.x += otherVel.x;
   otherPos.y += otherVel.y;
 
   // lets make the opponent move around randomly
-  if (random() < 0.05){
-    otherVel.x = random()*OPPONENT_MAX_SPEED/2;
-    otherVel.y = random()*OPPONENT_MAX_SPEED/2;
+  if (ct % 100 == 0){
+    otherVel.x = (random()-0.5)*OPPONENT_MAX_SPEED;
+    otherVel.y = (random()-0.5)*OPPONENT_MAX_SPEED;
   }
   if(otherPos.x < 0){
     otherVel.x = Math.abs(otherVel.x);
+    console.log("x < 0");
   }
   if(otherPos.x + IMG_WIDTH > width){
     otherVel.x = -Math.abs(otherVel.x);
+    console.log("x > w");
   }
   if(otherPos.y < 0){
     otherVel.y = Math.abs(otherVel.y);
+    console.log("y < 0");
   }
   if(otherPos.y + IMG_HEIGHT > height){
     otherVel.y = -Math.abs(otherVel.y);
+    console.log("y > h");
   }
 
-  if(keyIsDown(KEY_CODES["a"])){
+  if(keyIsDown(KEY_CODES["a"]) && avatarPos.x > 0){
     avatarPos.x -= AVATAR_SPEED;
   }
-  if(keyIsDown(KEY_CODES["d"])){
+  if(keyIsDown(KEY_CODES["d"]) && avatarPos.x + IMG_WIDTH < width){
     avatarPos.x += AVATAR_SPEED;
   }
-  if(keyIsDown(KEY_CODES["w"])){
+  if(keyIsDown(KEY_CODES["w"]) && avatarPos.y > 0){
     avatarPos.y -= AVATAR_SPEED;
   }
-  if(keyIsDown(KEY_CODES["s"])){
+  if(keyIsDown(KEY_CODES["s"]) && avatarPos.y + IMG_HEIGHT < height){
     avatarPos.y += AVATAR_SPEED;
   }
 
