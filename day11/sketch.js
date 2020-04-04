@@ -12,6 +12,7 @@ let otherVel = {"x": 0, "y": 1};
 function setup(){
   createCanvas(500,500);
   avatarImg = loadImage("avatar.png");
+  textSize(50);
 }
 
 let KEY_CODES = {
@@ -21,8 +22,13 @@ let KEY_CODES = {
   "s": 83
 }
 
+let points = 0;
+
 function draw(){
   background("#00ffff");
+  fill(0,0,0);
+  text("Points: "+points, width/2, 50);
+
   image(avatarImg, avatarPos.x, avatarPos.y, IMG_WIDTH, IMG_HEIGHT);
 
   push();
@@ -64,6 +70,13 @@ function draw(){
   if(keyIsDown(KEY_CODES["s"])){
     avatarPos.y += AVATAR_SPEED;
   }
+
+
+  if(otherPos.x + IMG_WIDTH > avatarPos.x && avatarPos.x + IMG_WIDTH > otherPos.x && 
+    otherPos.y + IMG_HEIGHT > avatarPos.y && avatarPos.y + IMG_HEIGHT > otherPos.y){
+    points += 1;
+  }
+
 }
 
 
